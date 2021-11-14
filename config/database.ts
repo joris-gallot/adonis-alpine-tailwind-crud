@@ -46,10 +46,9 @@ const databaseConfig: DatabaseConfig = {
         naturalSort: true,
       },
       healthCheck: false,
-      debug: false,
+      debug: Env.get('NODE_ENV') === 'development',
     },
-
-  }
+  },
 }
 
 export default databaseConfig

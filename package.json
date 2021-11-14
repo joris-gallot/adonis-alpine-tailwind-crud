@@ -36,6 +36,7 @@
     "@adonisjs/shield": "^7.0.7",
     "@adonisjs/view": "^6.1.1",
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@tailwindcss/forms": "^0.3.4",
     "alpinejs": "^3.5.1",
     "luxon": "^2.1.1",
     "pg": "^8.7.1",
