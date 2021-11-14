@@ -53,7 +53,7 @@
           </span>
         @end
 
-        @each(anchor in items.getUrlsForRange(items.lastPage > 5 ? (items.currentPage >= items.lastPage - 3 ? items.lastPage - 4 : items.currentPage - 1) : items.firstPage, items.lastPage > 5 ? (items.currentPage >= items.lastPage - 3 || items.currentPage + 1 > items.lastPage ? items.lastPage : items.currentPage + 1 ) : items.lastPage))
+        @each(anchor in items.getUrlsForRange(items.lastPage > 5 ? (items.currentPage >= items.lastPage - 3 ? items.lastPage - 4 : (items.currentPage - 1 || items.currentPage)) : items.firstPage, items.lastPage > 5 ? (items.currentPage >= items.lastPage - 3 || items.currentPage + 1 > items.lastPage ? items.lastPage : items.currentPage + 1 ) : items.lastPage))
         <a
           href="{{ anchor.url }}"
           aria-current="page"

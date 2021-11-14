@@ -1,15 +1,30 @@
 @layout('layouts/master')
 @section('content')
 <main class="space-y-10 py-10">
-  <h1 class="text-5xl font-bold">Posts</h1>
+  <h1 class="text-5xl font-bold">Home</h1>
 
   @component('components/Table', {
-    heads: ['Name'],
-    items: posts
+    heads: ['Name', 'Description'],
+    items: posts,
+    title: 'Posts',
+    textCreateBtn: 'Create new post'
   })
 
+    @slot('row', scope)
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+        {{ scope.item.name }}
+      </td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+        {{truncate(scope.item.description, 50)}}
+      </td>
+    @end
+
     @slot('empty')
-      @!component('components/EmptyState')
+      @!component('components/EmptyState', {
+        title: 'No posts',
+        description: 'Get started by creating a new posts.',
+        textCreateBtn: 'New post'
+      })
     @end
   @end
 </main>
