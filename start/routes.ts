@@ -23,3 +23,6 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async ({ view }) => {
   return view.render('index')
 })
+
+// posts routes
+Route.resource('posts', 'PostsController')

@@ -1,0 +1,16 @@
+@layout('layouts/master')
+@section('content')
+<main class="space-y-10 py-10">
+  <h1 class="text-5xl font-bold">Posts</h1>
+
+@component('components/Table', {
+    heads: ['Name'],
+    items: posts
+  })
+
+    @slot('empty')
+      @!component('components/EmptyState')
+    @end
+  @end
+</main>
+@endsection
