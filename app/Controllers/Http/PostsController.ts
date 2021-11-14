@@ -3,7 +3,7 @@ import Database from '@ioc:Adonis/Lucid/Database'
 
 export default class PostsController {
   public async index({ request, view }: HttpContextContract) {
-    const page = request.input('page', 1)
+    const page = Number(request.input('page', 1)) > 0 ? Number(request.input('page', 1)) : 1
     const limit = 10
 
     const posts = await Database.from('posts').paginate(page, limit)
